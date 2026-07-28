@@ -1,0 +1,16 @@
+{
+  "search.exclude": {
+    "**/workspace/research-input/**": true,
+    "**/workspace/research-output/**": true,
+    "**/workspace/large-input/**": true,
+    "**/workspace/large-output/**": true,
+    "**/workspace/scratch/**": true
+  },
+  "files.watcherExclude": {
+    "**/workspace/research-input/**": true,
+    "**/workspace/research-output/**": true,
+    "**/workspace/large-input/**": true,
+    "**/workspace/large-output/**": true,
+    "**/workspace/scratch/**": true
+  }
+}

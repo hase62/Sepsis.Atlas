@@ -1,0 +1,75 @@
+# Reconstructed workspace links, secrets, and disposable outputs
+workspace/
+.env
+.env.*
+!.env.example
+
+# Secrets
+*.key
+*.pem
+secrets/
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# R
+.Rhistory
+.RData
+.Ruserdata
+.Rproj.user/
+renv/library/
+renv/staging/
+
+# Workflow and generated outputs
+work/
+.nextflow/
+.snakemake/
+cache/
+logs/
+results/
+outputs/
+
+# Common large bioinformatics files
+*.fastq
+*.fastq.gz
+*.fq
+*.fq.gz
+*.bam
+*.bai
+*.cram
+*.crai
+*.sam
+*.vcf
+*.vcf.gz
+*.bcf
+*.h5
+*.hdf5
+*.h5ad
+*.loom
+*.rds
+*.RDS
+*.RData
+*.parquet
+*.feather
+*.arrow
+*.duckdb
+*.sqlite
+*.db
+*.npy
+*.npz
+*.pt
+*.pth
+*.ckpt
+
+# Archives
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.7z
