@@ -1,61 +1,68 @@
-# Sepsis.Atlas
+# Sepsis Atlas
 
-Research code and documentation for **Sepsis.Atlas**.
+Publication-oriented analysis code for construction of the
+Sepsis Atlas from publicly available single-cell RNA-sequencing
+datasets.
 
-## Local setup
+## Contents
 
-```bash
-setup-workspace
-research-doctor Sepsis.Atlas
-```
+- `code/R/`: reusable preprocessing and quality-control functions.
+- `code/loaders/`: study-specific loading procedures.
+- `code/canonical_metadata_freeze_v2/`: metadata harmonization.
+- `code/gene_feature_mapping_v1/`: common feature-space construction.
+- `code/full_atlas_primary_integration_v1/`: primary Atlas integration.
+- `code/full_atlas_annotation_v1/`: annotation, validation,
+  reconciliation, global QC, and final annotation freezing.
+- `EXECUTION_ORDER.tsv`: analysis workflow order.
+- `environment/`: software-environment information.
+- `config/paths.example.env`: portable path configuration.
 
-`setup-workspace` creates five local links:
+## Input data
 
-```text
-workspace/research-input  -> Research/aicode/input/Sepsis.Atlas
-workspace/research-output -> Research/aicode/output/Sepsis.Atlas
-workspace/large-input     -> ForShareLargeData/aicode/input/Sepsis.Atlas
-workspace/large-output    -> ForShareLargeData/aicode/output/Sepsis.Atlas
-workspace/scratch         -> local ~/scratch/... directory
-```
+Raw sequencing reads are not redistributed with this code package.
+They should be obtained from the original GEO/SRA repositories.
 
-Agents must not search outside these paths. Required files should be copied into the appropriate project directory in advance or created inside it.
+Cell Ranger output locations can be configured with:
 
-## Open in Visual Studio Code
+    export ATLAS_CELLRANGER_OUTPUT_ROOT=/path/to/cellranger_count/output
 
-```bash
-cd ~/src/Sepsis.Atlas
-code .
-```
+## Processed expression data
 
-Use the Codex or Claude Code VS Code extension as the primary interface. The project settings exclude linked data and output trees from automatic VS Code search and file watching; files can still be opened directly.
+The public expression matrices contain final-QC,
+SoupX-corrected integer RNA counts. They are processed counts,
+not raw sequencing counts. No normalized-expression matrix is
+distributed as the primary public MEX payload.
 
-## Long task worktree
+## Final Atlas
 
-```bash
-new-worktree Sepsis.Atlas shared metadata-audit
-cd ~/worktrees/Sepsis.Atlas/shared-metadata-audit
-code .
-```
+The frozen Atlas contains 665,816 cells from 158 included
+libraries, represented in a common 38,606-feature RNA space
+across nine source studies.
 
-Use one unique task name per logical task. Continue using that name until merge, then delete the worktree and branch. `shared` means Codex and Claude Code may use the same worktree sequentially, not simultaneously.
+Libraries with fewer than 200 cells remaining after final QC were
+excluded from Atlas integration.
 
-## Continue on another computer
+## Reproducibility
 
-Before leaving the current computer:
+See `EXECUTION_ORDER.tsv`, `environment/`, `MANIFEST.tsv`,
+`SYNTAX_AUDIT.tsv`, `PUBLIC_PATH_AUDIT.tsv`, and
+`SHA256SUMS_RELEASE.txt`.
 
-```bash
-git add <reviewed-files>
-git commit -m "WIP: checkpoint current task"
-git push -u origin work/metadata-audit
-```
+## Downstream reuse resources
 
-On the next computer:
+A companion reuse package provides compartment-wise batch-corrected reference
+matrices for annotation/mapping, rich metadata, and a study-balanced
+deconvolution reference. See `docs/P05E_REUSE_DATA_USE_GUIDE.txt` and
+`docs/RELEASE_ARCHITECTURE.md`.
 
-```bash
-cd ~/src/Sepsis.Atlas
-git fetch --all --prune
-new-worktree Sepsis.Atlas shared metadata-audit
-```
+Corrected expression is not intended for differential-expression inference;
+native final-QC SoupX-corrected integer counts remain authoritative for DE
+and pseudobulk analyses.
 
-GitHub carries code and instructions. Dropbox carries the four shared project directories. Uncommitted changes, environments, local scratch, and Agent chat sessions do not move between computers.
+## License
+
+The analysis code in this repository is released under the MIT License.
+
+The harmonized and derived Sepsis Atlas data release is distributed separately
+under the Creative Commons CC0 1.0 Universal waiver. This does not alter or
+supersede the rights, terms, or provenance of the original source datasets.

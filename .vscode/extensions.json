@@ -1,9 +1,0 @@
-{
-  "recommendations": [
-    "OpenAI.chatgpt",
-    "anthropic.claude-code",
-    "ms-python.python",
-    "ms-toolsai.jupyter",
-    "REditorSupport.r"
-  ]
-}
