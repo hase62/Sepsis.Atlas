@@ -14,14 +14,9 @@ publicly available single-cell RNA-sequencing datasets.
   global QC, and final annotation freezing.
 - `workflow/`: portable preprocessing and environment utilities together with
   the canonical downstream reuse workflow.
-- `docs/`: documentation for the downstream reuse resources and release
-  architecture.
 - `environment/`: software-environment information.
 - `config/paths.example.env`: example portable path configuration.
 - `EXECUTION_ORDER.tsv`: manuscript-associated analysis workflow order.
-- `DATA_AVAILABILITY.md`: summary of source and processed-data availability.
-- `CODE_SNAPSHOT.txt`: identifier of the frozen source code package from which
-  this repository was prepared.
 
 ## Input data
 
@@ -56,15 +51,13 @@ that file are relative to `code/`. Software-environment information is
 provided in `environment/`, and portable path configuration is illustrated in
 `config/paths.example.env`.
 
-The frozen source package used to prepare this repository is identified in
-`CODE_SNAPSHOT.txt`.
 
 ## Downstream reuse resources
 
 The repository includes compartment-wise batch-corrected reference workflows
 for annotation and mapping, rich metadata construction, and preparation of a
 study-balanced deconvolution reference. See
-`docs/P05E_REUSE_DATA_USE_GUIDE.txt` and `docs/RELEASE_ARCHITECTURE.md`.
+`workflow/reuse/p05e_v1/README.md`.
 
 Corrected expression is not intended for differential-expression inference;
 native final-QC SoupX-corrected integer counts remain authoritative for

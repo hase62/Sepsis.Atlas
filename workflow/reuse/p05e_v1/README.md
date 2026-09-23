@@ -27,3 +27,16 @@ public code snapshot.
 Corrected expression is intended for within-compartment reference mapping
 and not for differential-expression analysis. Native final-QC
 SoupX-corrected integer counts remain the quantitative expression authority.
+
+## Use of downstream resources
+
+Batch-corrected expression resources are intended for within-compartment
+reference mapping and annotation.
+
+They should not be used as the quantitative expression space for
+differential-expression analysis. Native final-QC SoupX-corrected integer
+counts remain the quantitative expression source for differential-expression
+and pseudobulk analyses.
+
+The deconvolution reference is derived from the frozen Atlas and is intended
+for downstream reuse with the associated Atlas cell-type definitions.

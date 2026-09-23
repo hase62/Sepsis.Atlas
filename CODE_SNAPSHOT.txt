@@ -1,7 +1,0 @@
-Sepsis Atlas public code snapshot
-
-Source frozen package:
-SepsisAtlas_code_release_v2__20260824_002032
-
-This GitHub-facing repository was prepared from the frozen public code
-package without modification of the scientific analysis.
