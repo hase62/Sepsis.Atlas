@@ -12,8 +12,7 @@ publicly available single-cell RNA-sequencing datasets.
 - `code/full_atlas_primary_integration_v1/`: primary Atlas integration.
 - `code/full_atlas_annotation_v1/`: annotation, validation, reconciliation,
   global QC, and final annotation freezing.
-- `workflow/`: portable preprocessing and environment utilities together with
-  the canonical downstream reuse workflow.
+- `workflow/`: canonical downstream reuse workflow.
 - `environment/`: software-environment information.
 - `config/paths.example.env`: example portable path configuration.
 - `EXECUTION_ORDER.tsv`: manuscript-associated analysis workflow order.

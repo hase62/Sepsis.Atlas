@@ -24,10 +24,6 @@ The following scripts are the executed P05E0-P05E6/finalization workflow:
 Superseded development and maintenance scripts are not included in this
 public code snapshot.
 
-Corrected expression is intended for within-compartment reference mapping
-and not for differential-expression analysis. Native final-QC
-SoupX-corrected integer counts remain the quantitative expression authority.
-
 ## Use of downstream resources
 
 Batch-corrected expression resources are intended for within-compartment
